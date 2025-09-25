@@ -1,0 +1,12 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Because of the difference between the time of execution of the program in a regular case and the best
+possible case.
+
+sort2 uses: Merge Sort
+
+How do you know?: Because of the difference of the speed of the program in all situations when compared with the other two programs.
+
+sort3 uses: Selection Sort
+
+How do you know?: In all cases the program performs equaly slow.
