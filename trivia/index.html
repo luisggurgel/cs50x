@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // TODO: Add code to check answers to questions
+                const answer1 = 'Jimin'
+                const answer2 = "Nobru"
+                const btss = document.querySelectorAll('.bts')
+                const lula = document.getElementById("lula")
+
+                const confirmation = document.getElementById("confirmation")
+                const input = document.getElementById("question2")
+                const lula2 = document.getElementById("lula2")
+
+                confirmation.addEventListener('click', () =>{
+                    if (input.value == answer2)
+                    {
+                        lula2.textContent = "Correct"
+                        input.classList.add('correct')
+                    }
+                    else
+                    {
+                        lula2.textContent = "Incorrect"
+                        input.classList.add('incorrect')
+                    }
+                })
+                for (const bts of btss) {
+                    bts.addEventListener('click', () => {
+                        const btsmember = bts.innerHTML
+                        if (btsmember == answer1) {
+                            lula.textContent = "Correct"
+                        }
+                        else {
+                            lula.textContent = "Incorrect"
+                        }
+                        for (const bts2 of btss) {
+                            bts2.disabled = true
+                            const btsmember = bts2.innerHTML
+                            if (btsmember == answer1) {
+                                bts2.classList.add("correct")
+                            }
+                            else {
+                                bts2.classList.add("incorrect")
+                            }
+                        }
+                    })
+                }
+            })
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which member of bts i am ?</h3>
+                <button class='bts'>Jimin</button>
+                <button class='bts'>J-hope</button>
+                <button class='bts'>Jung kook</button>
+                <button class='bts'>Jair Messias Bolsonaro</button>
+
+                <p id='lula'> </p>
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Who was the best free fire player of 2020?</h3>
+                <input id='question2'>
+                <button id="confirmation">submit</button>
+                <p id = "lula2"> </p>
+
+                </div>
+        </div>
+    </body>
+
+</html>
